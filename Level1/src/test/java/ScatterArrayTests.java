@@ -39,7 +39,6 @@ public class ScatterArrayTests {
         Integer[] arr={3,4,5,2,2,2,2,1,1};
         Integer[] expect={3,4,5,2,2,2,1,2,1};
         Integer[] result= _4_ScatterArray.scatter(arr,3);
-        System.out.println(Arrays.toString(result));
         Assert.assertArrayEquals(expect,result);
     }
 
@@ -47,6 +46,14 @@ public class ScatterArrayTests {
     public void testMultiple(){
         Integer[] arr={3,4,5,2,2,2,2,1,1,3,3,3,3,2,2,2,2,1};
         Integer[] expect={3,4,5,2,2,2,1,2,1,3,3,3,2,3,2,2,2,1};
+        Integer[] result= _4_ScatterArray.scatter(arr,3);
+        Assert.assertArrayEquals(expect,result);
+    }
+
+    @Test
+    public void test1(){
+        Integer[] arr={1,1,1,1,1,2,3,4,1,1,1,1};
+        Integer[] expect={1,1,1,2,1,1,3,1,4,1,1,1};
         Integer[] result= _4_ScatterArray.scatter(arr,3);
         System.out.println(Arrays.toString(result));
         Assert.assertArrayEquals(expect,result);

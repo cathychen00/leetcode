@@ -3,7 +3,7 @@ package com.cathy.leetcode;
 import java.util.Arrays;
 
 public class _4_ScatterArray {
-    public static Integer[] scatter(Integer[] arr, Integer maxSame) {
+    public  static<T> T[] scatter(T[] arr, Integer maxSame) {
         if (arr == null || arr.length <= maxSame) {
             return arr;
         }
@@ -21,9 +21,6 @@ public class _4_ScatterArray {
                         replace = current - maxSame + 1;
                     }
                     swap(arr, replace, different);
-                    System.out.println(current);
-                    System.out.println(different);
-                    System.out.println(Arrays.toString(arr));
                 }
                 num++;
 
@@ -35,13 +32,13 @@ public class _4_ScatterArray {
         return arr;
     }
 
-    private static void swap(Integer[] arr, Integer item1, Integer item2) {
-        Integer tmp = arr[item1];
+    private static<T> void swap(T[] arr, Integer item1, Integer item2) {
+        T tmp = arr[item1];
         arr[item1] = arr[item2];
         arr[item2] = tmp;
     }
 
-    private static Integer findPrevDiffrent(Integer[] arr, Integer current) {
+    private static<T> Integer findPrevDiffrent(T[] arr, Integer current) {
         if (current == 0) {
             return null;
         }
@@ -53,7 +50,7 @@ public class _4_ScatterArray {
         return null;
     }
 
-    private static Integer findNextDiffrent(Integer[] arr, Integer current) {
+    private static<T> Integer findNextDiffrent(T[] arr, Integer current) {
         if (current == arr.length - 1) {
             return null;
         }
